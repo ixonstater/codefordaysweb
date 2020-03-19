@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'resources/text.dart';
-import 'resources/theme.dart';
+import 'pages/about_us.dart';
+import 'pages/profiles.dart';
+import 'pages/hosted_projects.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key}) : super(key: key);
@@ -18,24 +20,34 @@ class _MyHomePageState extends State<MyHomePage> {
       child: Scaffold(
         appBar: AppBar(
           title: Text(
-            WebsiteText.homePageTitle
+            HomepageText.homePageTitle,
+            style: TextStyle(
+              fontSize: 30
+            ),
           ),
           bottom: TabBar(
             tabs: <Widget>[
               Tab(
-                text: WebsiteText.aboutTab,
-                icon: Icon(Icons.directions_car)
+                text: HomepageText.aboutTab,
+                icon: Icon(Icons.help)
               ),
               Tab(
-                text: WebsiteText.developersTab,
-                icon: Icon(Icons.directions_transit)
+                text: HomepageText.developersTab,
+                icon: Icon(Icons.people)
               ),
               Tab(
-                text: WebsiteText.projectsTab,
-                icon: Icon(Icons.directions_bike)
+                text: HomepageText.projectsTab,
+                icon: Icon(Icons.build)
               ),
             ],
           ),
+        ),
+        body: TabBarView(
+          children: <Widget>[
+            AboutPage(),
+            ProfilesPage(),
+            ProjectsPage()
+          ],
         )
       )
     );

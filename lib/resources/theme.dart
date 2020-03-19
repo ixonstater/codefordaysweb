@@ -7,4 +7,7 @@ class WebsiteTheme{
     static const accentColor = const Color.fromRGBO(33, 209, 238, 1.0);
 
     static const primaryTextColor = Color(0xFFFFFFFF);
+
+    static const profileMargin = 30.0;
+    static const profilePadding = 30.0;
 }
