@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import '../resources/text.dart';
 import '../resources/theme.dart';
 
-class AshleyProfile extends StatelessWidget{
-  AshleyProfile(Key key): super(key: key);
+class AshleyProfileTile extends StatelessWidget{
+  AshleyProfileTile(Key key): super(key: key);
 
   @override
   Widget build (BuildContext build){

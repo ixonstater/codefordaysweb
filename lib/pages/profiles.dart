@@ -1,8 +1,8 @@
 import 'package:codefordaysweb/resources/theme.dart';
 import 'package:flutter/material.dart';
 import '../resources/text.dart';
-import '../profiles/ashley.dart' show AshleyProfile;
-import '../profiles/josh.dart' show JoshProfile;
+import '../profiles/ashley.dart' show AshleyProfileTile;
+import '../profiles/josh.dart' show JoshProfileTile;
 
 class ProfilesPage extends StatelessWidget{
   ProfilesPage({Key key}) : super(key: key);
@@ -19,10 +19,10 @@ class ProfilesPage extends StatelessWidget{
             Row(
               children: <Widget>[
                 Expanded(
-                  child: JoshProfile(key)
+                  child: JoshProfileTile(key)
                 ),
                 Expanded(
-                  child: AshleyProfile(key)
+                  child: AshleyProfileTile(key)
                 )
               ],
             )
@@ -33,8 +33,8 @@ class ProfilesPage extends StatelessWidget{
       return Container(
         child: ListView(
           children: <Widget>[
-              JoshProfile(key),
-              AshleyProfile(key)
+              JoshProfileTile(key),
+              AshleyProfileTile(key)
           ],
         ),
       );
