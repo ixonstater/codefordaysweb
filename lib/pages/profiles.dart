@@ -10,9 +10,9 @@ class ProfilesPage extends StatelessWidget{
   @override
   Widget build (BuildContext build){
     var mediaData = MediaQuery.of(build);
-    var aspectRatio = mediaData.size.width / mediaData.size.height;
+    var width = mediaData.size.width;
 
-    if(aspectRatio > 1.1){
+    if(width > 1200){
       return Container(
         child: ListView(
           children: <Widget>[
