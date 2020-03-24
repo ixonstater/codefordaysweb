@@ -8,6 +8,6 @@ class AshleyProfileTile extends StatelessWidget{
 
   @override
   Widget build (BuildContext build){
-    return ProfileTile(key, '', 'Ashley Jarvis', JoshText.profileText);
+    return ProfileTile(key, 'assets/profile_pics/ashley.jpeg', 'Ashley Jarvis', JoshText.profileText);
   }
 }

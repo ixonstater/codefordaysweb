@@ -16,25 +16,27 @@ class _ProfileTileState extends State<ProfileTile> {
   String imgPth;
   String profileName;
   String profileText;
-  double mobileAspectRatio = 0.58;
+  double mobileWidth = 570;
   double shadowOffset;
+  double imgDimension = 200;
   _ProfileTileState(this.imgPth, this.profileName, this.profileText) : super();
 
   Widget build(BuildContext build){
     var mediaData = MediaQuery.of(build);
-    var aspectRatio = mediaData.size.width / mediaData.size.height;
-    var titleAlignment = aspectRatio > this.mobileAspectRatio ? Alignment.topLeft : Alignment.center;
+    var width = mediaData.size.width;
+    var titleAlignment = this.mobileWidth < width ? Alignment.topLeft : Alignment.center;
 
     Widget profileContents;
 
-    if(aspectRatio > this.mobileAspectRatio){
+    if(this.mobileWidth < width){
       profileContents = Row(
         children: <Widget>[
           Align(
             alignment: Alignment.topLeft,
             child: Image.asset(
               this.imgPth,
-              scale: 1.9,
+              width: this.imgDimension,
+              height: this.imgDimension
             ),
           ),
           SizedBox(width: 15),
@@ -62,7 +64,8 @@ class _ProfileTileState extends State<ProfileTile> {
               borderRadius: BorderRadius.circular(5.0),
               child: Image.asset(
                 imgPth,
-                scale: 1.9,
+                width: this.imgDimension,
+                height: this.imgDimension
               ),
             )
           ),
@@ -104,6 +107,7 @@ class _ProfileTileState extends State<ProfileTile> {
           color: WebsiteTheme.backgroundColor
         ),
         child: ListView(
+          physics: ClampingScrollPhysics(),
           children: <Widget>[
             Align(
               alignment: titleAlignment,

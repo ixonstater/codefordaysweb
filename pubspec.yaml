@@ -21,3 +21,4 @@ flutter:
   uses-material-design: true
   assets:
     - assets/profile_pics/josh.png
+    - assets/profile_pics/ashley.jpeg

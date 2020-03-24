@@ -2,7 +2,7 @@ class HomepageText{
     static String homePageTitle = 'Code For Days IO';
     static String aboutTab = 'About Us';
     static String developersTab = 'Profiles';
-    static String projectsTab = 'Hosted Projects';
+    static String projectsTab = 'Projects';
 }
 
 class JoshText{
