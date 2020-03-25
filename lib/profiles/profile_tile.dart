@@ -113,9 +113,9 @@ class _ProfileTileState extends State<ProfileTile> {
           child: Image.asset(
             imgPth,
             width: imgDimensionPortrait,
-            height: imgDimensionPortrait
-          ),
-        ),
+            height: imgDimensionPortrait,
+          )
+        )
       );
     }
 
