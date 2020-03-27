@@ -22,8 +22,19 @@ class _AshleyProfileState extends State<AshleyProfile>{
   _AshleyProfileState() : super();
 
   Widget build(BuildContext build){
-    return Text(
-      "Hello Ashley Profile Page"
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Ashley Jarvis"),
+      ),
+      body: Align(
+        alignment: Alignment.center,
+        child: Text(
+          "Coming Soon: Ashley's Profile",
+          style: TextStyle(
+            fontSize: 50
+          )
+        )
+      )
     );
   }
 }
