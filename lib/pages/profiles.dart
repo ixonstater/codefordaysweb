@@ -1,6 +1,4 @@
-import 'package:codefordaysweb/resources/theme.dart';
 import 'package:flutter/material.dart';
-import '../resources/text.dart';
 import '../profiles/ashley.dart' show AshleyProfileTile;
 import '../profiles/josh.dart' show JoshProfileTile;
 

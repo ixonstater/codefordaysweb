@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'resources/theme.dart';
 import 'homepage.dart';
+import 'profiles/josh.dart' show JoshProfile;
+import 'profiles/ashley.dart' show AshleyProfile;
 
 void main() => runApp(MyApp());
 
@@ -15,7 +17,12 @@ class MyApp extends StatelessWidget {
         accentColor: WebsiteTheme.accentColor,
         buttonColor: WebsiteTheme.buttonColor 
       ),
-      home: MyHomePage(),
+      initialRoute: '/',
+      routes: {
+        '/' : (context) => MyHomePage(),
+        '/josh_profile' : (context) => JoshProfile(key),
+        '/ashley_profile' : (context) => AshleyProfile(key)
+      }
     );
   }
 }

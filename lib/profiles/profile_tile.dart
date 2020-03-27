@@ -6,20 +6,23 @@ class ProfileTile extends StatefulWidget{
   final String imgPth;
   final String profileName;
   final String profileText;
+  final String routeName;
 
-  ProfileTile(Key key, this.imgPth, this.profileName, this.profileText) : super(key: key);
+  ProfileTile(Key key, this.imgPth, this.profileName, this.profileText, this.routeName) : super(key: key);
   @override
-  _ProfileTileState createState() => _ProfileTileState(this.imgPth, this.profileName, this.profileText);
+  _ProfileTileState createState() => _ProfileTileState(this.imgPth, this.profileName, this.profileText, this.routeName);
 }
 
 class _ProfileTileState extends State<ProfileTile> {
   String imgPth;
   String profileName;
   String profileText;
+  String routeName;
   double shadowOffset;
   final double mobileWidth = 570;
   final double mobileHeight = 250;
-  _ProfileTileState(this.imgPth, this.profileName, this.profileText) : super();
+
+  _ProfileTileState(this.imgPth, this.profileName, this.profileText, this.routeName) : super();
 
   Widget build(BuildContext build){
     var mediaData = MediaQuery.of(build);
@@ -30,42 +33,45 @@ class _ProfileTileState extends State<ProfileTile> {
       onEnter: this.grow,
       onExit: this.shrink,
 
-      child: Container(
-        height: 400,
-        margin: EdgeInsets.all(WebsiteTheme.profileMargin),
-        padding: EdgeInsets.all(WebsiteTheme.profilePadding),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.all(
-            Radius.circular(20)
-          ),
-          boxShadow: [
-            BoxShadow(
-              blurRadius: 1.0,
-              offset: Offset(
-                this.shadowOffset,
-                this.shadowOffset,
-              ),
-            )
-          ],
-          color: WebsiteTheme.backgroundColor
-        ),
-        child: Column(
-          children: <Widget>[
-            Align(
-              alignment: titleAlignment,
-              child: Text(
-                profileName,
-                style: TextStyle(
-                  fontSize: 20,
-                  color: WebsiteTheme.secondaryTextColor
+      child: GestureDetector(
+        onTap: () {Navigator.pushNamed(build, this.routeName);},
+        child: Container(
+          height: 400,
+          margin: EdgeInsets.all(WebsiteTheme.profileMargin),
+          padding: EdgeInsets.all(WebsiteTheme.profilePadding),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.all(
+              Radius.circular(20)
+            ),
+            boxShadow: [
+              BoxShadow(
+                blurRadius: 1.0,
+                offset: Offset(
+                  this.shadowOffset,
+                  this.shadowOffset,
                 ),
               )
-            ),
-            SizedBox(height: 15),
-            this.getProfileContents(build)
-          ]
-        ),
-      ),
+            ],
+            color: WebsiteTheme.backgroundColor
+          ),
+          child: Column(
+            children: <Widget>[
+              Align(
+                alignment: titleAlignment,
+                child: Text(
+                  profileName,
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: WebsiteTheme.secondaryTextColor
+                  ),
+                )
+              ),
+              SizedBox(height: 15),
+              this.getProfileContents(build)
+            ]
+          )
+        )
+      )
     );
   }
 
@@ -74,7 +80,6 @@ class _ProfileTileState extends State<ProfileTile> {
     double imgDimensionPortrait = 300;
     var mediaData = MediaQuery.of(build);
     var width = mediaData.size.width;
-    var height = mediaData.size.height;
 
     Widget profileContents;
 
@@ -113,9 +118,9 @@ class _ProfileTileState extends State<ProfileTile> {
           child: Image.asset(
             imgPth,
             width: imgDimensionPortrait,
-            height: imgDimensionPortrait,
-          )
-        )
+            height: imgDimensionPortrait
+          ),
+        ),
       );
     }
 
