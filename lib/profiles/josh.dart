@@ -57,14 +57,54 @@ class _JoshProfileState extends State<JoshProfile>{
             fontSize: 25,
           )
         ),
-        Column(
-          children: <Widget>[
-            HyperLink(
-              key,
-              JoshProfileText.goLink,
-              JoshProfileText.goURL
-            )
-          ]
+        Container(
+          margin: EdgeInsets.only(
+            left: 20
+          ),
+          child: Column(
+            children: <Widget>[
+              Align(
+                alignment: Alignment.topLeft,
+                child: HyperLink(
+                  this.key,
+                  JoshProfileText.goLink,
+                  JoshProfileText.goURL
+                ),
+              ),
+              Align(
+                alignment: Alignment.topLeft,
+                child: HyperLink(
+                  this.key,
+                  JoshProfileText.digitRecog,
+                  JoshProfileText.digitRecogURL
+                ),
+              ),
+              Align(
+                alignment: Alignment.topLeft,
+                child: HyperLink(
+                  this.key,
+                  JoshProfileText.cssCube,
+                  JoshProfileText.cssCubeURL
+                ),
+              ),
+              Align(
+                alignment: Alignment.topLeft,
+                child: HyperLink(
+                  this.key,
+                  JoshProfileText.dkSym,
+                  JoshProfileText.dkSymURL
+                ),
+              ),
+              Align(
+                alignment: Alignment.topLeft,
+                child: HyperLink(
+                  this.key,
+                  JoshProfileText.makeAndBake,
+                  JoshProfileText.makeAndBakeURL
+                ),
+              ),
+            ]
+          )
         )
       ]
     );
@@ -106,7 +146,7 @@ class HyperLink extends StatelessWidget{
           decoration: TextDecoration.underline
         )
       ),
-      onTap: () {html.window.open(this.url, '_blank');},
+      onTap: () {html.window.open(this.url, '_self');},
     );
   }
 }
@@ -119,7 +159,17 @@ class JoshProfileTheme{
 class JoshProfileText{
   static const title = "Josh Jarvis";
   static const projectsHeader = "My Projects";
+
   static const goLink = "Play a Game of Go";
-  static const goURL = 'http://www.codefordays.io/play_go/';
+  static const makeAndBake = "Get Assignments for Make and Bake";
+  static const digitRecog = "0-4 Digit Recognition";
+  static const cssCube = "Clickable CSS Cube";
+  static const dkSym = "Basic Physics Simulation for DK";
+
+  static const goURL = 'http://www.codefordays.io/josh/go_client/index.html';
+  static const makeAndBakeURL = 'http://www.codefordays.io/josh/make_and_bake/make_and_bake.html';
+  static const digitRecogURL = 'http://www.codefordays.io/josh/digit_recog/digit_recog.html';
+  static const cssCubeURL = 'http://www.codefordays.io/josh/css_cube/index.html';
+  static const dkSymURL = 'http://www.codefordays.io/josh/physics_sym/index.html';
 }
 
