@@ -43,7 +43,8 @@ class ProfilesPage extends StatelessWidget{
         child: ListView(
           children: <Widget>[
               JoshProfileTile(key),
-              AshleyProfileTile(key)
+              AshleyProfileTile(key),
+              ThanProfileTile(key)
           ],
         ),
       );
