@@ -3,6 +3,7 @@ import 'resources/theme.dart';
 import 'homepage.dart';
 import 'profiles/josh.dart' show JoshProfile;
 import 'profiles/ashley.dart' show AshleyProfile;
+import 'profiles/than.dart' show ThanProfile;
 
 void main() => runApp(MyApp());
 
@@ -21,7 +22,8 @@ class MyApp extends StatelessWidget {
       routes: {
         '/' : (context) => MyHomePage(),
         '/josh_profile' : (context) => JoshProfile(key),
-        '/ashley_profile' : (context) => AshleyProfile(key)
+        '/ashley_profile' : (context) => AshleyProfile(key),
+        '/than_profile' : (context) => ThanProfile()
       }
     );
   }

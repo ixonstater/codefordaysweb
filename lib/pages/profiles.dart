@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../profiles/ashley.dart' show AshleyProfileTile;
 import '../profiles/josh.dart' show JoshProfileTile;
+import '../profiles/than.dart' show ThanProfileTile;
 
 class ProfilesPage extends StatelessWidget{
   ProfilesPage({Key key}) : super(key: key);
@@ -21,6 +22,16 @@ class ProfilesPage extends StatelessWidget{
                 ),
                 Expanded(
                   child: AshleyProfileTile(key)
+                )
+              ],
+            ),
+            Row(
+              children: <Widget>[
+                Expanded(
+                  child: ThanProfileTile(key)
+                ),
+                Expanded(
+                  child: SizedBox()
                 )
               ],
             )
